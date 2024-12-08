@@ -4,12 +4,14 @@
 
 import requests
 
+
 def progress_bar(some_iter):
     try:
         from tqdm import tqdm
         return tqdm(some_iter)
     except ModuleNotFoundError:
         return some_iter
+
 
 def download_file_from_google_drive(id, destination):
     print("Trying to fetch {}".format(destination))
@@ -26,26 +28,27 @@ def download_file_from_google_drive(id, destination):
 
         with open(destination, "wb") as f:
             for chunk in progress_bar(response.iter_content(CHUNK_SIZE)):
-                if chunk: # filter out keep-alive new chunks
+                if chunk:  # filter out keep-alive new chunks
                     f.write(chunk)
 
-    URL = "https://docs.google.com/uc?export=download"
+    URL = "https://drive.google.com/uc?export=download"
 
     session = requests.Session()
 
-    response = session.get(URL, params = { 'id' : id }, stream = True)
+    response = session.get(URL, params={'id': id}, stream=True, timeout=30)
     token = get_confirm_token(response)
 
     if token:
-        params = { 'id' : id, 'confirm' : token }
-        response = session.get(URL, params = params, stream = True)
+        params = {'id': id, 'confirm': token}
+        response = session.get(URL, params=params, stream=True)
 
     save_response_content(response, destination)
 
 
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) is not 3:
+
+    if len(sys.argv) != 3:
         print("Usage: python download.py drive_file_id destination_file_path")
     else:
         # TAKE ID FROM SHAREABLE LINK

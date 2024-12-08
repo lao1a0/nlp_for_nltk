@@ -23,4 +23,4 @@ https://github.com/Kensuke-Hinata/statistic/tree/master/AI/books
 
 《自然语言处理综论》第二版 ：术语基本以这本书为准 
 
-[《PyTorch自然语言处理》](https://nlp2pytorch.apachecn.org/5/) ：PyTorchNLPBook目录是这本书的配套代码
+[《PyTorch自然语言处理》](https://opendoccn.github.io/nlp-pytorch-zh/docs/5.html) ：PyTorchNLPBook目录是这本书的配套代码

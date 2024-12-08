@@ -5,6 +5,10 @@ We have tried to make getting the data as simple as possible.  Run the shell scr
 
 There is one data file that we do not re-host: the GloVe word embeddings.  Please download from the stanford website: http://nlp.stanford.edu/data/glove.6B.zip.  Then, unzip and put the 100d version into a subfolder named `glove` to result in the following file path: `data/glove/glove.6B.100d.txt`
 
+我们已经尽力使获取数据变得尽可能简单。运行这个文件夹中提供的shell脚本（' get-all-data.sh '）来创建子文件夹结构并下载笔记本所需的数据文件。这些文件托管在谷歌驱动器上。或者，您可以按照下面的下载链接创建自己的目录结构！
+
+有一个数据文件我们不重新托管：GloVe词嵌入。请从斯坦福大学网站http://nlp.stanford.edu/data/glove.6B.zip下载。然后，解压缩并将100d版本放入名为‘ glove ’的子文件夹中，得到以下文件路径：‘ data/glove/glove. 6b .100d.txt ’
+
 ### Downloading and creating folders manually 
 
 #### Yelp
